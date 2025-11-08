@@ -1,0 +1,25 @@
+LOCUS       example      200 bp    DNA              UNK 01-JAN-1980
+DEFINITION  This is a toy example GenBank record.
+ACCESSION   TEST_ACC
+VERSION     TEST_ACC.1
+KEYWORDS    example.
+SOURCE      Example organism
+  ORGANISM  Example organism
+            .
+FEATURES             Location/Qualifiers
+     source          1..200
+                     /organism="Example organism"
+     CDS             join(10..50,70..120)
+                     /gene="geneA"
+                     /product="protein A"
+                     /translation="MSTAAALEK*"
+     CDS             complement(150..190)
+                     /gene="geneB"
+                     /product="protein B"
+                     /translation="MVL*"
+ORIGIN
+        1 aattgcctga tgcatgcatt gactagctag ctagctagct agct极ctag ctagctagct
+       61 agctagctag ctagctagct agctagctag ctagctagct agctagctag ctagctagct
+      121 agctagctag ctagctagct agctagctag ctagctagct agctagctag ctagctagct
+      181 agctagctag ctagctagct agctagctag
+//
