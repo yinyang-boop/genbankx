@@ -11,18 +11,21 @@ A lightweight GenBank parser with ordered CDS IntervalList and translation capab
 - Export sequences in FASTA format
 
 ## Installation
-bash
+```bash
 pip install genbankx
+```
 
 ## Usage
 ### Python API
+
 python
 from genbankx import parse_genbank, translate
 
-Parse a GenBank file
+### Parse a GenBank file
 with open("example.gb", "r") as f:
 records = list(parse_genbank(f))
-Extract and translate CDS sequences
+
+### Extract and translate CDS sequences
 for record in records:
 for cds in record.cds:
 dna_seq = "".join(record.sequence[iv.start-1:iv.end] for iv in cds)
@@ -32,11 +35,12 @@ protein_seq = translate(dna_seq)
 print(f"{cds.gene}: {protein_seq}")
 
 ### Command Line Interface
-bash
-Extract CDS DNA sequences
+```bash
+### Extract CDS DNA sequences
 genbankx input.gb -o cds.fasta
-Extract protein sequences
+### Extract protein sequences
 genbankx input.gb --proteins -o proteins.fasta
+```
 
 ## License
 MIT
